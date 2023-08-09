@@ -5,7 +5,7 @@ const path = require('node:path');
 // the command needs 3 arguments: the user to unban, the roles to add back, and an alias for the user
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('add-unban')
+    .setName('unban-add')
     .setDescription('Adds a user to the unban list.')
     .addUserOption((option) => option.setName('user').setDescription('The user to unban.').setRequired(true))
     .addStringOption((option) =>

@@ -4,7 +4,7 @@ const path = require('node:path');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('remove-unban')
+    .setName('unban-remove')
     .setDescription('Removes a user from the unban list.')
     .addUserOption((option) =>
       option.setName('user').setDescription('The user to remove from the unban list.').setRequired(false)

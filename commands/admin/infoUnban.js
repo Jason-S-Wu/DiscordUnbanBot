@@ -4,7 +4,7 @@ const path = require('node:path');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('info-unban')
+    .setName('unban-info')
     .setDescription('Shows the unban list.')
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
     .setDMPermission(false),
