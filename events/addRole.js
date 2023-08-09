@@ -5,8 +5,6 @@ const path = require('node:path');
 module.exports = {
   name: Events.GuildMemberAdd,
   async execute(member) {
-    console.log(member);
-
     const unbanListPath = path.join(__dirname, '/../data/unbanList.json');
     if (!fs.existsSync(unbanListPath)) {
       fs.writeFileSync(unbanListPath, JSON.stringify([]));

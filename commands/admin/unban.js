@@ -47,7 +47,13 @@ module.exports = {
       console.log('Banned Not Found!');
     }
 
-    // Return the invite link to the user
-    await interaction.reply(`Unbanned user with alias \`${alias}\`.\nInvite link: \n${invite.url}`);
+    // Return the invite link to the user but if the unbanned user shares a server with the bot, DM the invite link to the user instead.
+    try {
+      const unbannedUser = await interaction.client.users.fetch(user.user);
+      await unbannedUser.send(`You have been unbanned from ${server.name}.\nInvite link: \n${invite.url}`);
+      await interaction.reply(`Unbanned user with alias \`${alias}\`.\nInvite link sent via DM.`);
+    } catch (e) {
+      await interaction.reply(`Unbanned user with alias \`${alias}\`.\nInvite link: \n${invite.url}`);
+    }
   },
 };
