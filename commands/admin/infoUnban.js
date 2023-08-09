@@ -34,12 +34,11 @@ module.exports = {
     } else {
       const reply = users
         .map((user) => {
-          const member = server.members.cache.get(user.user);
-          const roles = member.roles.cache
-            .filter((role) => role.name !== '@everyone')
-            .map((role) => role.name)
-            .join(', ');
-          return `User: ${member.user.tag}\nAlias: ${user.alias}\nRoles: ${roles}`;
+          const member = server.members.cache.get(user.user)
+            ? `User: ${server.members.cache.get(user.user).user.tag}`
+            : `ID: ${user.user} — Not Currently In The Server`;
+          const roles = user.roles.map((role) => server.roles.cache.get(role).name).join(', ');
+          return `${member}\nAlias: ${user.alias}\nRoles: ${roles}`;
         })
         .join('\n\n');
       await interaction.reply(`\`\`\`${reply}\`\`\``);
