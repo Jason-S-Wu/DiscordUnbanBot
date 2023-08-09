@@ -37,6 +37,12 @@ module.exports = {
       return;
     }
 
+    // check if user is in the server if the user is still in the server then the user is not banned
+    if (server.members.cache.has(user.user)) {
+      await interaction.reply(`${alias} is currently in the server.`);
+      return;
+    }
+
     // create an invite link for the user
     const invite = await interaction.channel.createInvite({ maxAge: 0, maxUses: 1, unique: true });
 
