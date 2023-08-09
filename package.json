@@ -1,0 +1,26 @@
+{
+  "name": "discordunbanbot",
+  "version": "1.0.0",
+  "description": "Some people don't use the timeout function on Discord so I made a bot to auto reinvite the banned/kicked person.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jason-S-Wu/DiscordUnbanBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jason-S-Wu/DiscordUnbanBot/issues"
+  },
+  "homepage": "https://github.com/Jason-S-Wu/DiscordUnbanBot#readme",
+  "dependencies": {
+    "discord.js": "^14.12.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0"
+  }
+}
