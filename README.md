@@ -4,7 +4,7 @@ Some people don't use the timeout function on Discord so I made a bot to auto re
 
 # Features
 
-- Custom alias for banned user ie `/invite johnDoe`
+- Custom alias for banned user ie `/unban johnDoe`
 - Add roles once the user has been invited back
 
 # Installation:
