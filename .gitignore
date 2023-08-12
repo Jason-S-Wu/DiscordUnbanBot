@@ -134,3 +134,4 @@ config.json
 unbanList.json
 autoUnban.json
 autoUntimeout.json
+botSpam.json
