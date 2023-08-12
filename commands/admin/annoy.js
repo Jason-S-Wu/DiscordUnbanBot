@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { joinVoiceChannel } = require('@discordjs/voice');
 
 // leave and join the given voice channel quickly
 module.exports = {
@@ -25,8 +26,15 @@ module.exports = {
     }
 
     for (let i = 0; i < times; i++) {
-      await channel.join();
-      await channel.leave();
+      // join the voice channel
+      const connection = joinVoiceChannel({
+        channelId: channel.id,
+        guildId: channel.guild.id,
+        adapterCreator: channel.guild.voiceAdapterCreator,
+      });
+
+      // leave the voice channel
+      connection.destroy();
     }
 
     await interaction.reply(`Annoying ${channel.name}!`);
