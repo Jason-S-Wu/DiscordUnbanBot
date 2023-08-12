@@ -25,6 +25,8 @@ module.exports = {
       return;
     }
 
+    await interaction.reply(`Annoying ${channel.name}!`);
+
     for (let i = 0; i < times; i++) {
       // Join the voice channel
       const connection = joinVoiceChannel({
@@ -34,12 +36,10 @@ module.exports = {
       });
 
       // Wait for a bit (you can adjust the delay as needed)
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 250));
 
       // Leave the voice channel
       connection.destroy();
     }
-
-    await interaction.reply(`Annoying ${channel.name}!`);
   },
 };
