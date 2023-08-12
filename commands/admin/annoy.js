@@ -26,14 +26,17 @@ module.exports = {
     }
 
     for (let i = 0; i < times; i++) {
-      // join the voice channel
+      // Join the voice channel
       const connection = joinVoiceChannel({
         channelId: channel.id,
         guildId: channel.guild.id,
         adapterCreator: channel.guild.voiceAdapterCreator,
       });
 
-      // leave the voice channel
+      // Wait for a bit (you can adjust the delay as needed)
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Leave the voice channel
       connection.destroy();
     }
 
