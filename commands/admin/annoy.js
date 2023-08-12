@@ -19,7 +19,7 @@ module.exports = {
     const times = interaction.options.getInteger('times');
 
     // check if the channel is a voice channel
-    if (channel.type !== 'GUILD_VOICE') {
+    if (channel.type !== 2) {
       await interaction.reply('The channel needs to be a voice channel.');
       return;
     }
