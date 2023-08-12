@@ -8,8 +8,9 @@ module.exports = {
     .addChannelOption((option) =>
       option.setName('channel').setDescription('The voice channel to annoy.').setRequired(true)
     )
-    .addIntegerOption((option) => option.setName('times').setDescription('How many times to annoy the channel.'))
-    .setRequired(true)
+    .addIntegerOption((option) =>
+      option.setName('times').setDescription('How many times to annoy the channel.').setRequired(true)
+    )
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .setDMPermission(false),
 
