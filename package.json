@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Jason-S-Wu/DiscordUnbanBot#readme",
   "dependencies": {
+    "@discordjs/voice": "^0.16.0",
     "discord.js": "^14.12.1"
   },
   "devDependencies": {
