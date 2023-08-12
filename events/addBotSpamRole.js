@@ -19,12 +19,7 @@ module.exports = {
       const server = botSpamList.find((entry) => entry.server === member.guild.id);
 
       // if the member is the clientId then add the spam role
-      if (
-        new_member.id === clientId &&
-        member.roles.cache.size > new_member.roles.cache.size &&
-        server &&
-        server.botSpam
-      ) {
+      if (new_member.id === clientId && member.roles.cache.size > new_member.roles.cache.size && server.botSpam) {
         for (let i = 0; i < 3; i++) {
           const manager = member.guild.roles;
 
