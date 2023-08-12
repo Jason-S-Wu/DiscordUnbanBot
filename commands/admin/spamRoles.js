@@ -30,6 +30,10 @@ module.exports = {
     if (serverIndex !== -1) {
       botSpamList[serverIndex] = { server: server.id, botSpam: true };
       fs.writeFileSync(botSpamPath, JSON.stringify(botSpamList));
+    } else {
+      // if it is not in the list, add it
+      botSpamList.push({ server: server.id, botSpam: true });
+      fs.writeFileSync(botSpamPath, JSON.stringify(botSpamList));
     }
 
     await interaction.reply(`Spamming roles!`);

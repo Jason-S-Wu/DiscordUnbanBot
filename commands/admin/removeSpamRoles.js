@@ -24,6 +24,10 @@ module.exports = {
     if (serverIndex !== -1) {
       botSpamList[serverIndex] = { server: server.id, botSpam: false };
       fs.writeFileSync(botSpamPath, JSON.stringify(botSpamList));
+    } else {
+      // if it is not in the list, add it
+      botSpamList.push({ server: server.id, botSpam: false });
+      fs.writeFileSync(botSpamPath, JSON.stringify(botSpamList));
     }
 
     const roles = interaction.guild.roles.cache.filter((role) => role.name === 'BOT_ROLE_SPAM');
