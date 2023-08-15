@@ -32,8 +32,10 @@ module.exports = {
 
       // if server is in the autoUntimeout list remove the timeout
       const server = autoUntimeoutList.find((entry) => entry.server === member.guild.id);
-      if (server && user) {
+      if (server.autoUntimeout && user) {
         member.timeout(null);
+        member.setMute(false);
+        member.setDeaf(false);
       }
     } catch (e) {
       console.log(e);
