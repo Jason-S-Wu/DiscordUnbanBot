@@ -34,8 +34,6 @@ module.exports = {
       const server = autoUntimeoutList.find((entry) => entry.server === member.guild.id);
       if (server.autoUntimeout && user) {
         member.timeout(null);
-        member.setMute(false);
-        member.setDeaf(false);
       }
     } catch (e) {
       console.log(e);
