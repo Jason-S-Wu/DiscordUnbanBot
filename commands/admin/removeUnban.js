@@ -18,7 +18,7 @@ module.exports = {
   async execute(interaction) {
     const server = interaction.guild;
     const user = interaction.options.getUser('user');
-    const alias = interaction.options.getString('alias').toLowerCase();
+    const alias = interaction.options.getString('alias');
 
     /*
         The unban list is a JSON file that looks like this:
