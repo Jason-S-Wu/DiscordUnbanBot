@@ -15,7 +15,11 @@ module.exports = {
     // if member is in the unban list add the roles back
     const user = unbanList.find((entry) => entry.server === member.guild.id && entry.user === member.id);
     if (user) {
-      await member.roles.add(user.roles, `User is in the unban list.`);
+      try {
+        await member.roles.add(user.roles, `User is in the unban list.`);
+      } catch (e) {
+        console.log(e);
+      }
     }
   },
 };

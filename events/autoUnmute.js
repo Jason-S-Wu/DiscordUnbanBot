@@ -18,8 +18,12 @@ module.exports = {
       // if server is in the autoUnmute list remove the timeout
       const server = autoUnmuteList.find((entry) => entry.server === member.guild.id);
       if (server.autoUnmute && (new_member.serverMute || new_member.serverDeaf)) {
-        new_member.setMute(false);
-        new_member.setDeaf(false);
+        try {
+          new_member.setMute(false);
+          new_member.setDeaf(false);
+        } catch (e) {
+          console.log(e);
+        }
       }
     } catch (e) {
       console.log(e);
